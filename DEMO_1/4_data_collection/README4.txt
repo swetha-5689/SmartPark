@@ -1,0 +1,2 @@
+The programs that perform data collection are in the backend folders. Sample connection strings:
+mongodb+srv://swetha5689:SmartPark2020@smartpark-necgp.mongodb.net/SmartPark?authSource=admin&replicaSet=SmartPark-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true
