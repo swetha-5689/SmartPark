@@ -1,7 +1,9 @@
+//Reservation Backend
 const express = require("express");
 const router = express.Router();
 var cors = require('cors');
 const Res = require("../models/ResModel");
+//Sample Reservations
 var newReservation = Res({
   custFName: "Aniqa",
   custLName: "Rahim",
@@ -42,7 +44,7 @@ var newReservation3 = Res({
   reserveTime: new Date(2020, 2, 17, 12, 00)
 });
 router.use(cors());
-
+//POST
 router.post("/", (req, response) => {
   console.log("post");
   newReservation2
@@ -52,16 +54,15 @@ router.post("/", (req, response) => {
         response.end();
     });
 });
+//Get Request
 router.get("/", (req, response) => {
   Res.find({}, function(err, reservation) {
     if (err) {
       response.status(404).send(err);
     } else if (reservation.length == 0) {
-      response.send("sorry u still suck");
+      response.send("no reservations");
     } else {
-      console.log("hello");
-      var d= new Date(2020, 2, 17, 10, 00);
-      console.log(d);
+      console.log("reservations");
       response.json(reservation);
     }
   });

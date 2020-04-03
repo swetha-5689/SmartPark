@@ -1,0 +1,99 @@
+import React from "react";
+import Table from "react-bootstrap/Table";
+import Container from "react-bootstrap/Container";
+//import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+import FormControl from "react-bootstrap/FormControl";
+import ReservationTableRow from "./ReservationRow";
+//import { useAuth0 } from "./react-auth0-spa";
+import axios from "axios";
+
+/* The Reservations class creates Reservations page in the Manager Access Portal.*/
+class Reservations extends React.Component {
+    constructor(props) {
+        super(props); //handles calls to the parent constructor
+        this.state = {
+            //state property with data array
+            data: []
+        };
+        this.changeData = this.changeData.bind(this); //binds changeData to this
+    }
+    componentDidMount() {
+        //gets Reservations from database
+        axios
+            .get("http://localhost:4000/api/res/")
+            .then(response => {
+                this.setState({ data: response.data });
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+    }
+    changeData() {
+        //gets Reservations from database
+        axios
+            .get("http://localhost:4000/api/res/")
+            .then(response => {
+                this.setState({ data: response.data });
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+    }
+    resTable() {
+        //gets Reservations from database ad fills ReservationTable
+        return this.state.data.map((response, i) => {
+            return (
+                <ReservationTableRow
+                    obj={response}
+                    key={i}
+                    data={this.changeData}
+                />
+            );
+        });
+    }
+    //Renders Reservation Table
+    render() {
+        return (
+            <div>
+                <Container>
+                    <InputGroup className="mb-3">
+                        <InputGroup.Prepend>
+                            <InputGroup.Text id="inputGroup-sizing-default">
+                                Username
+                            </InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl
+                            placeholder="Search"
+                            aria-label="Default"
+                            aria-describedby="inputGroup-sizing-default"
+                        />
+                    </InputGroup>
+                </Container>
+                {/* Reservation Table */}
+                <Container className="mb-4">
+                    <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                                <th>Reservation Type</th>
+                                <th>Paid Status</th>
+                                <th>Stay Period</th>
+                                <th>Reservation End Time</th>
+                                <th>Confirmation Number</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.state.data == [] && <p>no data to show</p>}
+                            {this.state.data != [] && this.resTable()}
+                        </tbody>
+                    </Table>
+                </Container>
+            </div>
+        );
+    }
+}
+export default Reservations;
