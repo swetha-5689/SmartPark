@@ -1,0 +1,52 @@
+.goldCoin {
+  margin: auto;
+  text-align: center;
+  padding: 150px;
+}
+
+/* for the text above label */
+.form-group {
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+}
+
+.form-control {
+  width: 20% !important;
+  margin: auto;
+  padding: 10px;
+}
+/*
+    span.input-group-addon {
+      width: 10px !important;
+    }
+    */
+
+.type-details {
+  border-bottom: 1px solid #e9eef0;
+  padding: 10px;
+  width: 50%;
+  float: top;
+}
+.form-label {
+  float: top;
+  min-width: 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: black;
+  margin: auto;
+}
+
+input.form-text {
+  background: #fff;
+  border: 1px solid #dae2e6;
+  font-size: 20px;
+  color: #62696d;
+  padding: 6px 8px;
+  box-shadow: none;
+  border-radius: 0;
+  line-height: normal;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 0px;
+}
