@@ -17,3 +17,5 @@ https://cryptic-depths-70075.herokuapp.com/api/res/
 https://cryptic-depths-70075.herokuapp.com/api/spots/
 https://cryptic-depths-70075.herokuapp.com/api/floors/
 https://cryptic-depths-70075.herokuapp.com/api/spots/floor/:floorNumber
+https://cryptic-depths-70075.herokuapp.com/api/events/
+https://cryptic-depths-70075.herokuapp.com/api/prices/ - POST & GET
