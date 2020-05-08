@@ -1,0 +1,8 @@
+MongoDB Connection String (Manager & Customer):
+mongodb+srv://swetha5689:SmartPark2020@smartpark-necgp.mongodb.net/SmartPark?authSource=admin&replicaSet=SmartPark-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true
+
+MongoDB Connection String (Elevator):
+mongodb+srv://Tom:tom123@elevator0-awamx.mongodb.net/test?authSource=admin&replicaSet=Elevator0-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true
+
+MongoDB Connection String (Dynamic):
+mongodb+srv://chuck:chuck123@cluster0-zzery.mongodb.net/test?retryWrites=true&w=majority
