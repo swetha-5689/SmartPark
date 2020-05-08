@@ -1,0 +1,8 @@
+.page {
+  margin: auto;
+  text-align: center;
+  padding: 150px;
+}
+body {
+  background: lightblue url("./background.jpg") no-repeat fixed center;
+}
